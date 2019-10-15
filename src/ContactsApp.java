@@ -33,7 +33,9 @@ public class ContactsApp {
 			break;
 			
 		case "3":
-			System.out.println("You chose three");
+			System.out.println("Contact removal...");
+			myContacts.removeContact();
+			showMenu();
 			break;
 			
 		default: System.out.println("Please choose again.");

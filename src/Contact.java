@@ -17,8 +17,20 @@ public class Contact {
 	public void addContact() {
 		System.out.println("Please enter the first name of your contact");
 		Scanner reader = new Scanner(System.in);
-		String newContact = reader.nextLine();
-		contacts.add(newContact);
+		String newContact = reader.nextLine().trim();
+		if(newContact.isEmpty()) {
+			System.out.println("Please enter a valid contact name.");
+			addContact();
+		}else {contacts.add(newContact);}
+	}
+	
+	public void removeContact() {
+		System.out.println(contacts.size());
+		System.out.println("Which contact would you like to remove?");
+		for(int i = 0; i < contacts.size(); i++) {
+			System.out.println(i+1 + ") " + contacts.get(i));
+			
+		}
 	}
 	
 }
