@@ -15,7 +15,7 @@ public class Contact {
 	}
 	
 	public void addContact() {
-		System.out.println("Please enter the first name of your contact");
+		System.out.println("Please enter the first name of your contact:");
 		Scanner reader = new Scanner(System.in);
 		String newContact = reader.nextLine().trim();
 		if(newContact.isEmpty()) {
@@ -29,8 +29,12 @@ public class Contact {
 		System.out.println("Which contact would you like to remove?");
 		for(int i = 0; i < contacts.size(); i++) {
 			System.out.println(i+1 + ") " + contacts.get(i));
-			
 		}
+		Scanner scn = new Scanner(System.in);
+		int indexToRemove = scn.nextInt();
+		System.out.println("Removing " + contacts.get(indexToRemove - 1) + " from contacts...");
+		contacts.remove(indexToRemove - 1 );
+		
 	}
 	
 }
