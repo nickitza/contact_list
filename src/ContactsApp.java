@@ -10,6 +10,7 @@ public class ContactsApp {
 		System.out.println("1) Show Contacts");
 		System.out.println("2) Add Contact");
 		System.out.println("3) Delete Contact");
+		System.out.println("4) Update Contact");
 		System.out.println();
 		Scanner reader = new Scanner(System.in);
 		String choice = reader.nextLine();
@@ -18,12 +19,7 @@ public class ContactsApp {
 		case "1":
 			System.out.println("Showing contacts...");
 			myContacts.showContacts();
-			Scanner listener = new Scanner(System.in);
-			System.out.println("-- Press enter to return to main menu --");
-			String listen = listener.nextLine();
-			if(listen != null) {
 				showMenu();
-			}
 			break;
 			
 		case "2":
@@ -38,8 +34,14 @@ public class ContactsApp {
 			showMenu();
 			break;
 			
+		case "4":
+			System.out.println("Updating Contact");
+			myContacts.updateContact();
+			showMenu();
+			break;
+			
 		default: System.out.println("Please choose again.");
-				showMenu();
+			showMenu();
 			break;
 		}
 	}

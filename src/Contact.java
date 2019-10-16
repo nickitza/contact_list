@@ -34,6 +34,20 @@ public class Contact {
 		int indexToRemove = scn.nextInt();
 		System.out.println("Removing " + contacts.get(indexToRemove - 1) + " from contacts...");
 		contacts.remove(indexToRemove - 1 );
+	}
+	
+	public void updateContact() {
+		System.out.println(contacts.size());
+		System.out.println("Which contact would you like to update?");
+		for(int i = 0; i < contacts.size(); i++) {
+			System.out.println(i+1 + ") " + contacts.get(i));
+		}
+		Scanner scanInt = new Scanner(System.in);
+		int indexToUpdate = scanInt.nextInt();
+		System.out.println("Updating " + contacts.get(indexToUpdate -1) + ". Please enter the updated name for this contact.");
+		Scanner scanString = new Scanner(System.in);
+		String updatedContact = scanString.nextLine();
+		contacts.set(indexToUpdate -1, updatedContact);
 		
 	}
 	
